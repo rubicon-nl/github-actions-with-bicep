@@ -1,3 +1,5 @@
+// param <parameter-name> <parameter-data-type> = <default-value>
+
 // decorators
 @description('Location input')
 @allowed([

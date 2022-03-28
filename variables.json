@@ -1,0 +1,40 @@
+{
+    "location": "westeurope",
+    "appServicePlan": {
+        "name": "rubi-do-asp",
+        "sites": [
+            {
+                "name": "rubi-do-host",
+                "isHost": true,
+                "settings": [
+                    { 
+                        "name": "BACKGROUND-COLOR", 
+                        "value": "#eb8540" 
+                    }
+                ]
+            },
+            {
+                "name": "rubi-do-chatroom",
+                "isHost": false,
+                "settings": [
+                    { 
+                        "name": "BACKGROUND-COLOR", 
+                        "value": "#eb8540" 
+                    }
+                ]
+            }
+        ],
+        "chatrooms": [
+            "frontend", 
+            "devsecops",
+            "containers",
+            "integratie"   
+        ]
+    },
+    "webPubSub": {
+        "name": "rubi-do-pubsub"
+    },
+    "appConfig": {
+        "name": "rubi-do-appconfig"
+    }
+}

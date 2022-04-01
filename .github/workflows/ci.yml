@@ -30,7 +30,6 @@ jobs:
         uses: actions/setup-node@v3.0.0
         with:
           node-version: 16.x
-          cache: npm
       
       - name: npm install and build (, and add tests)
         run: |

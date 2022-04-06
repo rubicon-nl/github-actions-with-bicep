@@ -1,19 +1,19 @@
 // var <varable-name> = <variable-value>
 
-var storageAccountName = concat('sa', uniqueString(resourceGroup().id), '001')
+var varStorageAccountName = concat('sa', uniqueString(resourceGroup().id), '001')
 
-var storageAccountObject = {
+var varStorageAccountObject = {
   location: 'westeurope'
   kind: 'Storage'
   sku: 'Standard_LRS'
 }
 
 resource resSA 'Microsoft.Storage/storageAccounts@2021-08-01' = {
-  name: storageAccountName
-  location: storageAccountObject.location
-  kind: storageAccountObject.kind
+  name: varStorageAccountName
+  location: varStorageAccountObject.location
+  kind: varStorageAccountObject.kind
   sku: {
-    name: storageAccountObject.sku
+    name: varStorageAccountObject.sku
   }
 }
 

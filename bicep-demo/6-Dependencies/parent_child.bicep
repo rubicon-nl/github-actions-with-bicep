@@ -1,9 +1,9 @@
 // Nested resources
-resource dnsZone 'Microsoft.Network/dnsZones@2018-05-01' = {
+resource resDnsZone 'Microsoft.Network/dnsZones@2018-05-01' = {
   name: 'dnszone.com'
   location: resourceGroup().location
 
-  resource aRecord 'A@2018-05-01' = {
+  resource resARecord 'A@2018-05-01' = {
     name: 'google'
     properties: {
       TTL: 3600
@@ -15,7 +15,7 @@ resource dnsZone 'Microsoft.Network/dnsZones@2018-05-01' = {
     }
   }
 
-  resource cnameRecord 'CNAME@2018-05-01' = {
+  resource resCnameRecord 'CNAME@2018-05-01' = {
     name: 'opensource'
     properties: {
       TTL: 600

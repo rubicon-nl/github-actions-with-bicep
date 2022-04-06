@@ -1,8 +1,8 @@
 @description('Resource name prefixes')
-param prefix string
+param parPrefix string
 
 resource resVnet 'Microsoft.Network/virtualNetworks@2019-11-01' = {
-  name: '${prefix}nic001'
+  name: '${parPrefix}nic001'
   location: 'westeurope'
   properties: {
     addressSpace: {
@@ -12,7 +12,7 @@ resource resVnet 'Microsoft.Network/virtualNetworks@2019-11-01' = {
     }
     subnets: [
       {
-        name: '${prefix}subnet001'
+        name: '${parPrefix}subnet001'
         properties: {
           addressPrefix: '10.0.0.0/24'
         }
@@ -23,12 +23,12 @@ resource resVnet 'Microsoft.Network/virtualNetworks@2019-11-01' = {
 
 
 resource resNIC 'Microsoft.Network/networkInterfaces@2020-11-01' = {
-  name: '${prefix}nic001'
+  name: '${parPrefix}nic001'
   location: 'westeurope'
   properties: {
     ipConfigurations: [
       {
-        name: '${prefix}ipconfig001'
+        name: '${parPrefix}ipconfig001'
         properties: {
           privateIPAllocationMethod: 'Dynamic'
           subnet: {
@@ -41,7 +41,7 @@ resource resNIC 'Microsoft.Network/networkInterfaces@2020-11-01' = {
 }
 
 resource resVM 'Microsoft.Compute/virtualMachines@2020-12-01' = {
-  name: '${prefix}vm001'
+  name: '${parPrefix}vm001'
   location: 'westeurope'
   properties: {
     hardwareProfile: {
@@ -60,7 +60,7 @@ resource resVM 'Microsoft.Compute/virtualMachines@2020-12-01' = {
         version: 'latest'
       }
       osDisk: {
-        name: 'o${prefix}osdisk'
+        name: 'o${parPrefix}osdisk'
         caching: 'ReadWrite'
         createOption: 'FromImage'
       }

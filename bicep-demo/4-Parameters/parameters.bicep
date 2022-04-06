@@ -6,11 +6,11 @@
   'westeurope'
   'northeurope'
 ])
-param location string
+param parLocation string
 
 @secure()
-param password string
+param parPassword string
 
 @minLength(4)
 @maxLength(10)
-param userName string
+param parUserName string

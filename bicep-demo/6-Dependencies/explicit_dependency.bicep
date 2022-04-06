@@ -1,6 +1,6 @@
 // Explicit dependency
-resource rubiconZone 'Microsoft.Network/dnsZones@2018-05-01' = {
-  name: 'contoso.com'
+resource resRubiconZone 'Microsoft.Network/dnsZones@2018-05-01' = {
+  name: 'rubicon.nl'
   location: 'global'
 }
 
@@ -15,6 +15,6 @@ resource virtualNetwork 'Microsoft.Network/virtualNetworks@2019-11-01' = {
     }
   }
   dependsOn: [
-    rubiconZone
+    resRubiconZone
   ]
 }
